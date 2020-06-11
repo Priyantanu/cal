@@ -10,7 +10,7 @@ placedValue = (inputChar) =>{
         isstringinput  = true;
         return;
     }
-    if(isstringinput==true){ resultNode.value = inputChar; isstringinput = false;return; }
+    if(isstringinput==true && inputChar!=`+` && inputChar!= `-` && inputChar!= `*` && inputChar!= `-` && inputChar!="=" ){ resultNode.value = inputChar; isstringinput = false;return; }
     switch(inputChar){
         case `1`:
             resultNode.value += inputChar;
@@ -99,7 +99,8 @@ placedValue = (inputChar) =>{
                     resultNode.value = previousvalFloat%resultFloat;
                     break;
             }
-            break;
+            previousMethod = "add";
+            previousVal = 0;
     }
 };
 
