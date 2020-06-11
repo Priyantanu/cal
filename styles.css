@@ -6,13 +6,19 @@
    padding: 1% 1%;
 }
 #header{
-    text-align: left;
     margin-left: 20%;
     margin-top: 10%;
-    margin-bottom: 5px;
     font-family: "Courier New";
 }
 
+#header .alignLeft{
+    float: left;
+    margin: 0%;
+}
+#header .alignRight{
+    float: right;
+    margin: 0 25% 0 0;
+}
 .output #outputbox{
     width: 98%;
     border: 1px solid #D3D3D3;

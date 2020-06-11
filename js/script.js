@@ -2,15 +2,14 @@ let resultNode = document.getElementById("outputbox");
 let previousVal = 0;
 let previousMethod = 'add';
 let isstringinput = true;
+let sign = document.querySelector("#header .alignRight");
 placedValue = (inputChar) =>{
     if(inputChar==`C`){
-        resultNode.value = 0;
-        previousVal = 0;
-        previousMethod = "add";
+        reset();
         isstringinput  = true;
         return;
     }
-    if(isstringinput==true && inputChar!=`+` && inputChar!= `-` && inputChar!= `*` && inputChar!= `-` && inputChar!="=" ){ resultNode.value = inputChar; isstringinput = false;return; }
+    if(isstringinput==true && inputChar!=`+` && inputChar!= `-` && inputChar!= `*` && inputChar!= `-` && inputChar!="=" && inputChar!='E'){ resultNode.value = inputChar; isstringinput = false;return; }
     switch(inputChar){
         case `1`:
             resultNode.value += inputChar;
@@ -52,6 +51,11 @@ placedValue = (inputChar) =>{
             isstringinput = true;
                 break;
         case `E`:
+            if(resultNode.value.length==1){
+                isstringinput = true;
+                reset();
+                return;
+            }
             resultNode.value = resultNode.value.slice(0,-1);
             break;
         case `+`:
@@ -59,24 +63,32 @@ placedValue = (inputChar) =>{
             isstringinput = true;
             previousMethod = "add";
             previousVal = resultNode.value;
+            if(sign.textContent.length>5) sign.textContent = sign.textContent.slice(0,-1);
+            sign.textContent += `+`;
             break;
         case `-`:
             placedValue("=");
             isstringinput = true;
             previousMethod = "sub";
             previousVal = resultNode.value;
+            if(sign.textContent.length>5) sign.textContent = sign.textContent.slice(0,-1);
+            sign.textContent += `-`
                 break;
         case `*`:
             placedValue("=");
             isstringinput = true;
             previousMethod = "mul";
             previousVal = resultNode.value;
+            if(sign.textContent.length>5) sign.textContent = sign.textContent.slice(0,-1);
+            sign.textContent += `*`
                 break;
         case `/`:
             placedValue("=");
             isstringinput = true;
             previousMethod = "div";
             previousVal = resultNode.value;
+            if(sign.textContent.length>5) sign.textContent = sign.textContent.slice(0,-1);
+            sign.textContent += `/`
             break;
         case `=`:
             isstringinput = true;
@@ -86,7 +98,7 @@ placedValue = (inputChar) =>{
                 case "add":
                     resultNode.value = previousvalFloat + resultFloat;
                     break;
-                case "subs":
+                case "sub":
                     resultNode.value = previousvalFloat - resultFloat;
                     break;
                 case "mul":
@@ -101,7 +113,16 @@ placedValue = (inputChar) =>{
             }
             previousMethod = "add";
             previousVal = 0;
+            sign.textContent = `SIGN:`
+            break;
     }
 };
 
+
+reset  = () => {
+    resultNode.value = 0;
+    previousVal = 0;
+    previousMethod = "add";
+    sign.textContent = `SIGN:`
+}
 
