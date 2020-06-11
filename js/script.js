@@ -9,7 +9,7 @@ placedValue = (inputChar) =>{
         isstringinput  = true;
         return;
     }
-    if(isstringinput==true && inputChar!=`+` && inputChar!= `-` && inputChar!= `*` && inputChar!= `-` && inputChar!="=" && inputChar!='E'){ resultNode.value = inputChar; isstringinput = false;return; }
+    if(isstringinput==true && inputChar!=`+` && inputChar!= `-` && inputChar!= `*` && inputChar!= `-` && inputChar!="=" && inputChar!='E' && inputChar!="%"){ resultNode.value = inputChar; isstringinput = false;return; }
     switch(inputChar){
         case `1`:
             resultNode.value += inputChar;
@@ -48,7 +48,12 @@ placedValue = (inputChar) =>{
             resultNode.value += inputChar;
             break;
         case `%`:
+            placedValue("=");
             isstringinput = true;
+            previousMethod = "mod";
+            previousVal = resultNode.value;
+            if(sign.textContent.length>5) sign.textContent = sign.textContent.slice(0,-1);
+            sign.textContent += `%`;
                 break;
         case `E`:
             if(resultNode.value.length==1){
