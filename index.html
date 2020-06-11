@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header">
+        CALCULATOR
+    </div>
+    <div class="wrapper">
+        <form class="output">
+            <input type="text" id="outputbox" name="outputbox" value="0" >
+        </form>
+        <div class="inputs">
+            <table>
+                <tr>
+                  <td>
+                    <button type="button" class="colorHighliter" id="clear" onclick="placedValue(`C`)">C</button>
+                  </td>
+                  <td>
+                    <button type="button" class="colorHighliter" id="mod" onclick="placedValue(`%`)">%</button>
+                  </td>
+                  <td>
+                    <button type="button" class="colorHighliter" id="clearOne" onclick="placedValue(`E`)">E</button>
+                  </td>
+                  <td>
+                    <button type="button" class="colorHighliter" id="division" onclick="placedValue(`/`)">/</button>
+                  </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" id="seven" onclick="placedValue(`7`)">7</button>
+                      </td>
+                      <td>
+                        <button type="button" id="eight" onclick="placedValue(`8`)">8</button>
+                      </td>
+                      <td>
+                        <button type="button" id="nine" onclick="placedValue(`9`)">9</button>
+                      </td>
+                      <td>
+                        <button type="button" class="colorHighliter" id="multiply" onclick="placedValue(`*`)">*</button>
+                      </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" id="four" onclick="placedValue(`4`)">4</button>
+                      </td>
+                      <td>
+                        <button type="button" id="five" onclick="placedValue(`5`)">5</button>
+                      </td>
+                      <td>
+                        <button type="button" id="six" onclick="placedValue(`6`)">6</button>
+                      </td>
+                      <td>
+                        <button type="button" class="colorHighliter" id="subtract" onclick="placedValue(`-`)">-</button>
+                      </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" id="one" onclick="placedValue(`1`)">1</button>
+                      </td>
+                      <td>
+                        <button type="button" id="two" onclick="placedValue(`2`)">2</button>
+                      </td>
+                      <td>
+                        <button type="button" id="three" onclick="placedValue(`3`)">3</button>
+                      </td>
+                      <td>
+                        <button type="button" class="colorHighliter" id="add" onclick="placedValue(`+`)">+</button>
+                      </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" id="doubleZero" onclick="placedValue(`00`)">00</button>
+                      </td>
+                      <td>
+                        <button type="button" id="zero" onclick="placedValue(`0`)">0</button>
+                      </td>
+                      <td>
+                        <button type="button" id="decimal" onclick="placedValue(`.`)">.</button>
+                      </td>
+                      <td>
+                        <button type="button" class="colorHighliter" id="equal" onclick="placedValue(`=`)">=</button>
+                      </td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

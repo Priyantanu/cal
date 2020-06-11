@@ -1,0 +1,54 @@
+.wrapper{
+   border-radius: 15px;
+   border: 1px solid #D3D3D3;
+   width: 60%;
+   margin: 0 20%;
+   padding: 1% 1%;
+}
+#header{
+    text-align: left;
+    margin-left: 20%;
+    margin-top: 10%;
+    margin-bottom: 5px;
+    font-family: "Courier New";
+}
+
+.output #outputbox{
+    width: 98%;
+    border: 1px solid #D3D3D3;
+    border-radius: 10px;
+    padding: 1% 1%;
+    text-align: right;
+    margin-bottom: 10px;
+    color: black;
+}
+.inputs table{
+    width: 100%;
+    margin: 0;
+}
+
+.inputs table tr td button{
+    width: 100%;
+    border-color: transparent;
+   color: black;
+   height: 40px;
+   border-radius: 5px;
+   outline: none;
+   background-color: #F5F5F5;
+}
+.inputs table tr td button:hover{
+    background-color: rgb(230, 227, 227);
+}
+
+.inputs table tr td button:active{
+    background-color: rgb(175, 175, 175);
+}
+
+
+.inputs table tr td .colorHighliter{
+    background-color: rgb(224, 223, 223);
+}
+
+input:focus{
+    outline: none;
+}
